@@ -1,0 +1,10 @@
+#!/bin/bash
+
+image=mylisp
+
+docker build -t $image .
+
+docker stop $image
+docker rm -f $image
+
+docker run -ti --name $image $image
